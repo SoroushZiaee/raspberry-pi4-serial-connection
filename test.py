@@ -1,15 +1,17 @@
 import serial
+import time
 
 
 def run():
     ser = serial.Serial("/dev/ttyAMA0", 9600)
-    readedText = ser.readlines()
-    print(readedText)
-    ser.close()
+    return ser.readlines()
 
 
 def main():
-    run()
+    print("Start")
+    while True:
+
+        print("Reveived: ".run())
 
 
 if __name__ == "__main__":
