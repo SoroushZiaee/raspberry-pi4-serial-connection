@@ -1,5 +1,11 @@
+import serial
+
+
 def run():
-    print("Hello")
+    ser = serial.Serial("/dev/ttyAMA0", 9600)
+    readedText = ser.readlines()
+    print(readedText)
+    ser.close()
 
 
 def main():
