@@ -6,7 +6,18 @@ import os
 SEPARATOR = "/"
 BUFFER_SIZE = 4096
 
-host = "192.168.100.11"
+host = "localhost"
 port = 5001
 
-filename = ""
+filename = "dataset.csv"
+
+filesize = os.path.getsize(os.path.join("data", filename))
+
+print(f"{filesize}")
+
+# create the client socket
+s = socket.socket()
+
+print(f"[+] Connecting to {host}:{port}")
+s.connect((host, port))
+print("[+] Connected.")
